@@ -1,0 +1,15 @@
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+  <testsuites>
+    <testsuite name="PAY.JP PHP Test Suite">
+      <directory>./tests/Payjp/Tests</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist>
+      <directory>src</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-clover" target="clover.xml" />
+  </logging>
+</phpunit>
