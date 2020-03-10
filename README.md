@@ -12,7 +12,7 @@ You can install the bindings via [Composer](http://getcomposer.org/). Add this t
 
     {
       "require": {
-        "wozozo/pppayjp-php": "~2.0"
+        "wozozo/pppayjp-php": "1.*"
       }
     }
 

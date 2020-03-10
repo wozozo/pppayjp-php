@@ -16,7 +16,7 @@ use Payjp\Exception\InvalidRequestException;
  */
 class Client
 {
-    const VERSION = 2.0;
+    const VERSION = 1.0;
 
     /**
      * @var string $apiKey
