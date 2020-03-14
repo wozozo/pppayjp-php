@@ -1,4 +1,4 @@
-# PAY.JP for PHP
+# PAY.JP PHP bindings
 
 [![Build Status](https://travis-ci.org/wozozo/pppayjp-php.svg?branch=master)](https://travis-ci.org/wozozo/pppayjp-php)
 
@@ -24,7 +24,7 @@ PHP 7.1 and later.
 composer install
 ```
 
-SDK を読み込むには Composer の [autoload](https://getcomposer.org/doc/00-intro.md#autoloading) を使用します。
+ライブラリを読み込むには Composer の [autoload](https://getcomposer.org/doc/00-intro.md#autoloading) を使用します。
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -57,10 +57,10 @@ echo $token . PHP_EOL;
 
 ## テスト
 
-テストを実行するには、まず [Composer](http://getcomposer.org/) を使って [PHPUnit](http://packagist.org/packages/phpunit/phpunit) をインストールします
+テストを実行するには、[Composer](http://getcomposer.org/) で [PHPUnit](http://packagist.org/packages/phpunit/phpunit) をインストールしてください。
 
 ```shell script
-composer update --dev
+composer update
 ```
 
 テストの実行方法
