@@ -8,49 +8,63 @@ PHP 7 and later.
 
 ## Composer
 
-You can install the bindings via [Composer](http://getcomposer.org/). Add this to your `composer.json`:
+この SDK は [Composer](http://getcomposer.org/) でインストールできます。
 
-    {
-      "require": {
-        "wozozo/pppayjp-php": "1.*"
-      }
-    }
+```json
+{
+  "require": {
+    "wozozo/pppayjp-php": "1.*"
+  }
+}
+```
 
-Then install via:
+上記の内容を `composer.json` に書き、下のコマンドでインストールしてください。
 
-    composer install
+```shell script
+composer install
+```
 
-To use the bindings, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
+SDK を読み込むには Composer の [autoload](https://getcomposer.org/doc/00-intro.md#autoloading) を使用します。
 
-    require __DIR__ . '/vendor/autoload.php';
+```php
+require __DIR__ . '/vendor/autoload.php';
+```
 
-## Getting Started
+## 使用例
 
-Simple usage looks like:
+```php
+use Payjp\Client;
 
-    use Payjp\Client;
+$payjp = new Client('sk_test_c62fade9d045b54cd76d7036');
+// ダミートークンを使用する場合
+$payjp->setDummyToken(true);
 
-    $payjp = new Client('sk_test_c62fade9d045b54cd76d7036');
+$token = $payjp->tokens->create([
+    'card' => [
+        'number' => 4242424242424242,
+        'exp_month' => 12,
+        'exp_year' => 2020
+    ]
+]);
+echo $token . PHP_EOL;
+```
 
-    $token = $payjp->tokens->create([
-        'card' => [
-            'number' => 4242424242424242,
-            'exp_month' => 12,
-            'exp_year' => 2020
-        ]
-    ]);
-    echo $token . PHP_EOL;
+## APIドキュメント
 
-## Documentation
+* APIドキュメントについては以下の公式ドキュメントをご覧ください
+  * [PAY.JP API 利用ガイド](https://pay.jp/docs/started)
+  * [PAY.JP API リファレンス](https://pay.jp/docs/api/)
 
-- Please see our official [documentation](https://pay.jp/docs/started).
+## テスト
 
-## Tests
+テストを実行するには、まず [Composer](http://getcomposer.org/) を使って [PHPUnit](http://packagist.org/packages/phpunit/phpunit) をインストールします
 
-In order to run tests first install [PHPUnit](http://packagist.org/packages/phpunit/phpunit) via [Composer](http://getcomposer.org/):
+```shell script
+composer update --dev
+```
 
-    composer update --dev
+テストの実行方法
 
-To run the test suite:
-
-    ./vendor/bin/phpunit
+```shell script
+./vendor/bin/phpunit
+```

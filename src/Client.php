@@ -125,14 +125,44 @@ class Client
         $headers = [
             'Accept' => 'application/json',
             'X-Payjp-Client-User-Agent' => json_encode($ua),
-            'User-Agent' => 'Payjp/v2 PhpBindings/' . Client::VERSION,
+            'User-Agent' => 'xPayjp/v1 PHP Bindings/' . Client::VERSION,
         ];
 
         if ($method === 'POST') {
             $headers['Content-Type'] = 'application/x-www-form-urlencoded';
         }
 
+        if ($this->isDummyMode()) {
+            $headers['X-Payjp-Direct-Token-Generate'] = 'true';
+        }
+
         return $headers;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isDummyMode()
+    {
+        if (array_key_exists('dummy', $this->config)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param bool $flag
+     * @return void
+     */
+    public function setDummyMode(bool $flag)
+    {
+        if ($flag) {
+            $this->config['dummy'] = true;
+        } else {
+            if ($this->isDummyMode()) {
+                unset($this->config['dummy']);
+            }
+        }
     }
 
     /**
