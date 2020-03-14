@@ -10,14 +10,6 @@ use Phake;
  */
 class ChargeTest extends \Payjp\Tests\PayjpTestCase {
 
-    private $requestor;
-
-    public function setUp()
-    {
-        $this->payjp = Phake::partialMock('Payjp\Client', 'sk_xxx');
-        Phake::when($this->payjp)->request(Phake::anyParameters())->thenReturn([]);
-    }
-
     public function testChargeRetrieve()
     {
         $res = $this->payjp->charges->retrieve('ch_xxx');
