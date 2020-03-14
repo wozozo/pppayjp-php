@@ -4,11 +4,11 @@
 
 ## Requirements
 
-PHP 7 and later.
+PHP 7.1 and later.
 
 ## Composer
 
-この SDK は [Composer](http://getcomposer.org/) でインストールできます。
+[Composer](http://getcomposer.org/) でインストールします。
 
 ```json
 {
@@ -18,7 +18,7 @@ PHP 7 and later.
 }
 ```
 
-上記の内容を `composer.json` に書き、下のコマンドでインストールしてください。
+上記の内容を `composer.json` に書き、以下のコマンドでインストールしてください。
 
 ```shell script
 composer install
