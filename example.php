@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Payjp\Client;
 
 $payjp = new Client('sk_test_c62fade9d045b54cd76d7036');
-$payjp->setDummyMode(true);
+$payjp->setDirectTokenMode(true);
 
 try {
     $token = $payjp->tokens->create([

@@ -36,8 +36,8 @@ require __DIR__ . '/vendor/autoload.php';
 use Payjp\Client;
 
 $payjp = new Client('sk_test_c62fade9d045b54cd76d7036');
-// ダミートークンを使用する場合
-$payjp->setDummyToken(true);
+// X-Payjp-Direct-Token-Generate 使用する場合
+$payjp->setDirectTokenMode(true);
 
 $token = $payjp->tokens->create([
     'card' => [

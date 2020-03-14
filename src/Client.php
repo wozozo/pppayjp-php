@@ -116,7 +116,7 @@ class Client
             'bindings_version' => Client::VERSION,
             'lang' => 'php',
             'lang_version' => $langVersion,
-            'publisher' => 'payjp',
+            'publisher' => 'xpayjp',
             'uname' => $uname,
             'httplib' => 'Guzzle',
             'httplib_version' => GuzzleClient::VERSION,
@@ -132,7 +132,7 @@ class Client
             $headers['Content-Type'] = 'application/x-www-form-urlencoded';
         }
 
-        if ($this->isDummyMode()) {
+        if ($this->isDirectTokenMode()) {
             $headers['X-Payjp-Direct-Token-Generate'] = 'true';
         }
 
@@ -142,9 +142,9 @@ class Client
     /**
      * @return bool
      */
-    private function isDummyMode()
+    private function isDirectTokenMode()
     {
-        if (array_key_exists('dummy', $this->config)) {
+        if (array_key_exists('direct_token', $this->config)) {
             return true;
         }
         return false;
@@ -154,13 +154,13 @@ class Client
      * @param bool $flag
      * @return void
      */
-    public function setDummyMode(bool $flag)
+    public function setDirectTokenMode(bool $flag)
     {
         if ($flag) {
-            $this->config['dummy'] = true;
+            $this->config['direct_token'] = true;
         } else {
-            if ($this->isDummyMode()) {
-                unset($this->config['dummy']);
+            if ($this->isDirectTokenMode()) {
+                unset($this->config['direct_token']);
             }
         }
     }
