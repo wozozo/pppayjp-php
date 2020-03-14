@@ -1,12 +1,12 @@
 {
   "name": "wozozo/pppayjp-php",
   "require": {
-    "php": ">= 7.0.0",
+    "php": ">= 7.1.0",
     "guzzlehttp/guzzle": "6.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.*",
-    "phake/phake": "2.*"
+    "phpunit/phpunit": "7.*",
+    "phake/phake": "3.*"
   },
   "description": "PAY.JP PHP binding",
   "license": "MIT",

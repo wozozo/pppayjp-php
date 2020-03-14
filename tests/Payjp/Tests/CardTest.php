@@ -10,12 +10,6 @@ use Phake;
  */
 class CardTest extends \Payjp\Tests\PayjpTestCase {
 
-    public function setUp()
-    {
-        $this->payjp = Phake::partialMock('Payjp\Client', 'sk_xxx');
-        Phake::when($this->payjp)->request(Phake::anyParameters())->thenReturn([]);
-    }
-
     public function testCardRetrieve()
     {
         $res = $this->payjp->customers->cards->retrieve('cus_123', 'car_456');

@@ -10,12 +10,6 @@ use Phake;
  */
 class SubscriptionTestTest extends \Payjp\Tests\PayjpTestCase {
 
-    public function setUp()
-    {
-        $this->payjp = Phake::partialMock('Payjp\Client', 'sk_xxx');
-        Phake::when($this->payjp)->request(Phake::anyParameters())->thenReturn([]);
-    }
-
     public function testSubscriptionRetrieve()
     {
         $res = $this->payjp->subscriptions->retrieve('sub_xxx');
