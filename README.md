@@ -1,6 +1,6 @@
 # PAY.JP PHP bindings
 
-[![Build Status](https://travis-ci.org/wozozo/pppayjp-php.svg?branch=master)](https://travis-ci.org/wozozo/pppayjp-php)
+[![Build Status](https://travis-ci.org/wozozo/xpayjp-php.svg?branch=master)](https://travis-ci.org/wozozo/xpayjp-php)
 
 ## Requirements
 
@@ -13,7 +13,7 @@ PHP 7.1 and later.
 ```json
 {
   "require": {
-    "wozozo/pppayjp-php": "1.*"
+    "wozozo/xpayjp-php": "1.*"
   }
 }
 ```

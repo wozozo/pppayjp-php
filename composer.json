@@ -1,5 +1,5 @@
 {
-  "name": "wozozo/pppayjp-php",
+  "name": "wozozo/xpayjp-php",
   "require": {
     "php": ">= 7.1.0",
     "guzzlehttp/guzzle": "6.*"
@@ -19,7 +19,7 @@
       "role": "Developer"
     }
   ],
-  "homepage": "https://github.com/wozozo/pppayjp-php",
+  "homepage": "https://github.com/wozozo/xpayjp-php",
   "autoload": {
     "psr-4": {
       "Payjp\\": "src/"
